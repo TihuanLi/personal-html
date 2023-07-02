@@ -3,8 +3,19 @@
 <head>
   <title>Welcome</title>
   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(backgound.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
     .container {
-      /*position: relative;*/
       width: 400px;
       margin: 0 auto;
       display: flex;
@@ -13,7 +24,7 @@
     }
 
     .table-container {
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
       backdrop-filter: blur(5px);
       padding: 20px;
@@ -30,16 +41,6 @@
       padding: 8px;
       text-align: left;
       border-bottom: 1px solid #ddd;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5f5;
-      /*display: flex;*/
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
     }
 
     .container-main {
@@ -94,16 +95,16 @@
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            updateStatus(website, xhr.status,'请求成功');
+            updateStatus(website, xhr.status, '请求成功');
           } else {
-            updateStatus(website,xhr.status, '请求失败');
+            updateStatus(website, xhr.status, '请求失败');
           }
         }
       };
       xhr.send();
     }
 
-    function updateStatus(website, statusCode,status) {
+    function updateStatus(website, statusCode, status) {
       var table = document.getElementById('websiteTable');
       var row = table.insertRow();
       var cell1 = row.insertCell(0);
